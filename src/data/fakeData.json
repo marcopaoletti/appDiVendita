@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "name": "Pizza",
+    "price": 6.0,
+    "img": "https://www.bofrost.it/writable/products/images-v2/9146.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Bistecca",
+    "price": 18.99,
+    "img": "https://www.saporideisassi.it/blog/wp-content/uploads/steak-bistecca-meat-toscana-tuscany.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Cozze",
+    "price": 22.5,
+    "img": "https://ips.plug.it/cips/buonissimo.org/cms/2012/05/cozze-al-prezzemolo.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Tiramisù",
+    "price": 4.5,
+    "img": "http://www.agrodolce.it/wp-content/uploads/2015/12/dolce-con-il-pandoro-1.jpg"
+  }
+]
+
+//https://api.myjson.com/bins/nrch8

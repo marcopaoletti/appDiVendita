@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import page1 from 'reducers/exampleParam1.reducer';
+import products from 'reducers/products.reducer';
+import bill from 'reducers/bill.reducer';
 
 export default combineReducers({
-  page1
+  products,
+  bill
 });

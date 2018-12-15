@@ -1,1 +1,2 @@
-export * from 'actions/example.action';
+export * from 'actions/products.action';
+export * from 'actions/bill.action';
