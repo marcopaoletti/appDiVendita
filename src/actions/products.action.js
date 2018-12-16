@@ -4,7 +4,6 @@ import { apiGetProducts } from 'api';
 export const getProducts = () => async (dispatch) => {
   try {
     const products = await apiGetProducts();
-    console.log(products.data);
     dispatch({
       type: PRODUCT_LIST,
       payload: products.data,

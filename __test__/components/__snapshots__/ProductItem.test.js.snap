@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductItem> should render properly even without a name 1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+  onPress={[MockFunction]}
+>
+  <Card
+    title=", 11.45 euro"
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://superimmagine.com",
+        }
+      }
+      style={
+        Object {
+          "height": 150,
+          "width": "100%",
+        }
+      }
+    />
+  </Card>
+</TouchableOpacity>
+`;
