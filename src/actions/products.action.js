@@ -1,4 +1,4 @@
-import { PRODUCT_LIST } from 'actions/types';
+import { PRODUCT_LIST, ADD_PRODUCT } from 'actions/types';
 import { apiGetProducts } from 'api';
 
 export const getProducts = () => async (dispatch) => {
@@ -12,3 +12,8 @@ export const getProducts = () => async (dispatch) => {
     console.error(e); // todo da aggiungere Sentry
   }
 };
+
+export const addProduct = product => ({
+  type: ADD_PRODUCT,
+  payload: product,
+});

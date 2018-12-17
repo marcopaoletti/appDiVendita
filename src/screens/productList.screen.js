@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { SafeAreaView, View, Dimensions, FlatList } from 'react-native';
+import { View, Dimensions, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { ProductItem, Cashier } from 'common';
+import { ProductItem, Cashier, Header } from 'common';
 import { addProductToBill, getProducts } from 'actions';
+import { propHeight } from 'Utils';
 
 
 class ProductsList extends Component {
@@ -17,18 +18,21 @@ class ProductsList extends Component {
 
   render() {
     return (
-      <SafeAreaView style={styles.container(this.isLandscape)}>
-        <View style={styles.list}>
-          <FlatList
-            data={this.props.productsList}
-            renderItem={({ item }) =>
-              <ProductItem {...item} onPress={() => this.props.addProductToBill(item)} />
-            }
-            keyExtractor={item => item.id.toString()}
-          />
+      <View style={styles.main}>
+        <Header style={styles.header} title="Mia applicazione" icon="plus" navigate={() => this.props.navigation.navigate('AddProduct')} />
+        <View style={styles.container(this.isLandscape)}>
+          <View style={styles.list}>
+            <FlatList
+              data={this.props.productsList}
+              renderItem={({ item }) =>
+                <ProductItem {...item} onPress={() => this.props.addProductToBill(item)} />
+              }
+              keyExtractor={item => item.id.toString()}
+            />
+          </View>
+          <Cashier />
         </View>
-        <Cashier />
-      </SafeAreaView>
+      </View>
     );
   }
 }
@@ -37,12 +41,17 @@ ProductsList.propTypes = {
   productsList: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   addProductToBill: PropTypes.func.isRequired,
   getProducts: PropTypes.func.isRequired,
+  navigation: PropTypes.shape().isRequired,
 };
 
 ProductsList.defaultProps = {
 };
 
 const styles = {
+  main: {
+    flex: 1,
+    paddingVertical: propHeight(30),
+  },
   container: isLandscape => ({
     flex: 1,
     flexDirection: isLandscape ? 'row' : 'column',
@@ -58,6 +67,9 @@ const styles = {
   },
   buttonContainer: {
     flex: 0.2,
+  },
+  header: {
+    flex: 0.1,
   },
 };
 

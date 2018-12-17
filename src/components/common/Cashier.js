@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { BillItem } from 'common';
-import { resetBill } from 'actions';
+import { resetBill, removeItem } from 'actions';
 
 class Cashier extends Component {
   render() {
@@ -14,7 +14,7 @@ class Cashier extends Component {
         <View style={styles.billContainer}>
           <FlatList
             data={this.props.billItems}
-            renderItem={({ item }) => <BillItem item={item} />}
+            renderItem={({ item, index }) => <BillItem item={item} removeItem={() => this.props.removeItem(index)} />}
             ListEmptyComponent={() =>
               <Text style={styles.emptyItem}>Non ci sono elementi nel carrello</Text>
             }
@@ -69,4 +69,5 @@ const mapStatetoProps = ({ bill }) => ({
 
 export default connect(mapStatetoProps, {
   resetBill,
+  removeItem,
 })(Cashier);

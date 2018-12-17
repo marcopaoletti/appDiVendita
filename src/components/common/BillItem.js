@@ -1,19 +1,20 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 
-const BillItem = ({ item }) => {
+const BillItem = ({ item, removeItem }) => {
   return (
-    <View style={styles.row}>
-      <Text style={styles.productName}>{item.name}</Text>
+    <TouchableOpacity style={styles.row} onPress={() => removeItem()}>
+      <Text style={styles.productName}>{item.name}</Text >
       <Text style={styles.productPrice}>{`€ ${item.price.toFixed(2)}`}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
 BillItem.propTypes = {
   item: PropTypes.shape().isRequired,
+  removeItem: PropTypes.func.isRequired,
 };
 
 const styles = {

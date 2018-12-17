@@ -1,0 +1,38 @@
+{
+  "presets": [
+    "babel-preset-expo",
+    "react-native",
+    "react-native-dotenv"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "transform-react-jsx-source"
+      ]
+    }
+  },
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "."
+        ],
+        "alias": {
+          "src": "./src",
+          "assets": "./assets",
+          "actions": "./src/actions",
+          "reducers": "./src/reducers",
+          "api": "./src/api",
+          "components": "./src/components",
+          "common": "./src/components/common",
+          "data": "./src/data",
+          "screens": "./src/screens",
+          "styles": "./src/styles",
+          "Utils": "./src/Utils.js",
+          "test": "./__test__"
+        }
+      }
+    ]
+  ]
+}

@@ -6,8 +6,7 @@ import { ENV, DEVTOOLS } from 'react-native-dotenv';
 import reducers from 'reducers';
 
 let temporaryStore = null;
-
-if (ENV === 'dev' && DEVTOOLS === true) {
+if (ENV === 'dev' && DEVTOOLS === 'true') {
   const { composeWithDevTools } = require('remote-redux-devtools');
   temporaryStore = createStore(reducers, composeWithDevTools(applyMiddleware(thunk)));
 } else temporaryStore = createStore(reducers, {}, compose(applyMiddleware(thunk)));

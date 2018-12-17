@@ -32,5 +32,4 @@ describe('<ProductItem>', () => {
     rendered.props.onPress();
     expect(onPressMock).toBeCalled();
   });
-
 });
